@@ -28,8 +28,8 @@ class _BarCodeScanerState extends State<BarCodeScaner> {
           return false;
         },
         onScan: (String value) {
-          // CodeScan(value);
-          print("Resulting Respone code " + value);
+          CodeScan(value);
+          // print("Resulting Respone code " + value);
           // CodeScan('');
         },
         onDetect: (_) {
@@ -45,7 +45,7 @@ class _BarCodeScanerState extends State<BarCodeScaner> {
     try {
       http.Response response = await http.get(
         Uri.parse(
-            'https://divnity.jeuxtesting.com/api/getBooth/' + responeFromScan),
+            'https://divnity.jeuxtesting.com/api/getBooth/1' + responeFromScan),
       );
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
