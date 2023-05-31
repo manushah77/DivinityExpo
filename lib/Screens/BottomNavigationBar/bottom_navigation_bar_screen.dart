@@ -1,10 +1,7 @@
 import 'package:divinity_expo/Constant/color.dart';
 import 'package:divinity_expo/Screens/BottomNavigationBar/ProfileScreen/profile_screen.dart';
 import 'package:divinity_expo/Screens/BottomNavigationBar/Scan/scan_screen.dart';
-import 'package:divinity_expo/Screens/BottomNavigationBar/SponsorsScreen/sponser_screen.dart';
-import 'package:divinity_expo/Screens/ForgetPasswordScreem/forget_password_screen.dart';
-import 'package:divinity_expo/Screens/SignupScreen/signup_screen.dart';
-import 'package:divinity_expo/Screens/login_screen/login_screen.dart';
+import 'package:divinity_expo/Screens/BottomNavigationBar/SponsorsScreen/sponser_screen.dart';  
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 

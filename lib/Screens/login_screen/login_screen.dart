@@ -134,8 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             controller: emailC,
                             // ignore: body_might_complete_normally_nullable
                             validator: (value) {
-                              var email = RegExp(
-                                  r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+                              var email = RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
                               if (value == null || value == '') {
                                 return 'Enter Your Email';
                               } else if (email.hasMatch(value)) {
@@ -145,8 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             },
 
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.only(
-                                  top: 10, left: 15, right: 13, bottom: 10),
+                              contentPadding: EdgeInsets.only(top: 10, left: 15, right: 13, bottom: 10),
                               border: InputBorder.none,
                               hintText: 'barab@gmail.com',
                               hintStyle: GoogleFonts.openSans(
@@ -158,13 +156,11 @@ class _LoginScreenState extends State<LoginScreen> {
                               // fillColor: Colors.grey.withOpacity(0.2),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.r),
-                                borderSide:
-                                    BorderSide(color: Colors.black54, width: 1),
+                                borderSide: BorderSide(color: Colors.black54, width: 1),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.r),
-                                borderSide:
-                                    BorderSide(color: Colors.grey, width: 1),
+                                borderSide: BorderSide(color: Colors.grey, width: 1),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.r),
@@ -233,15 +229,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 },
                                 icon: Icon(
                                   size: 16,
-                                  ispasswordvisible
-                                      ? Icons.visibility_off
-                                      : Icons.visibility,
+                                  ispasswordvisible ? Icons.visibility_off : Icons.visibility,
                                   color: Colors.grey,
                                 ),
                               ),
                               suffixIconColor: Colors.grey,
-                              contentPadding: EdgeInsets.only(
-                                  top: 10, left: 15, right: 13, bottom: 10),
+                              contentPadding: EdgeInsets.only(top: 10, left: 15, right: 13, bottom: 10),
                               border: InputBorder.none,
                               hintText: 'Password',
                               hintStyle: GoogleFonts.openSans(
@@ -251,13 +244,11 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.r),
-                                borderSide:
-                                    BorderSide(color: Colors.black54, width: 1),
+                                borderSide: BorderSide(color: Colors.black54, width: 1),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.r),
-                                borderSide:
-                                    BorderSide(color: Colors.grey, width: 1),
+                                borderSide: BorderSide(color: Colors.grey, width: 1),
                               ),
                               errorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.r),
@@ -282,8 +273,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          ForgetPasswordScreen(),
+                                      builder: (context) => ForgetPasswordScreen(),
                                     ),
                                   );
                                 },
@@ -310,9 +300,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             name: 'Login',
                             ontap: () {
                               if (formKey.currentState!.validate()) {
-                                Login(emailC.text.toString(),
-                                        passwordC.text.toString())
-                                    .then((value) {
+                                Login(emailC.text.toString(), passwordC.text.toString()).then((value) {
                                   if (value) {
                                     getTokenFromSharedPreferences();
                                     Navigator.pushReplacement(
@@ -381,8 +369,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future Login(String email, pasword) async {
     try {
-      http.Response response = await http
-          .post(Uri.parse('https://divnity.jeuxtesting.com/api/login'), body: {
+      http.Response response = await http.post(Uri.parse('https://divnity.jeuxtesting.com/api/login'), body: {
         'email': email,
         'password': pasword,
       });
@@ -454,9 +441,9 @@ class _LoginScreenState extends State<LoginScreen> {
       ));
     }
   }
+}
 
-  Future<String?> getTokenFromSharedPreferences() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString('token');
-  }
+Future<String?> getTokenFromSharedPreferences() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  return prefs.getString('token');
 }

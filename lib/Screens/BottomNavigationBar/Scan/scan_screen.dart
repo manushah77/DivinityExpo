@@ -1,8 +1,7 @@
 import 'dart:convert';
 
-import 'package:divinity_expo/Screens/BottomNavigationBar/Scan/bar_code_scan.dart';
+import 'package:divinity_expo/Screens/BottomNavigationBar/Scan/qr_page.dart';
 import 'package:divinity_expo/Screens/BottomNavigationBar/Scan/see_all_both.dart';
-import 'package:divinity_expo/Widgets/sponser_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -132,7 +131,7 @@ class _ScanScreenState extends State<ScanScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => BarCodeScaner(),
+                                  builder: (context) => const QrCodePage(),
                                 ),
                               );
                             },
