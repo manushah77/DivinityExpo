@@ -34,25 +34,6 @@ class _QrCodePageState extends State<QrCodePage> {
     controller?.resumeCamera();
   }
 
-  void _showInvalidQRDialog() {
-    showDialog(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('Invalid QR code'),
-        content: const Text('The QR code scanned is invalid.'),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              controller?.resumeCamera();
-            },
-            child: const Text('OK'),
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   void initState() {
     getToken();
